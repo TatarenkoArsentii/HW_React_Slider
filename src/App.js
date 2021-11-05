@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Carusel from "./components/Carusel";
+
+
+const slides = [
+  {
+    src: "http://fotorelax.ru/wp-content/uploads/2016/03/Beautiful-photos-and-pictures-on-various-subjects-01.jpg",
+    title: "Some Image",
+  },
+  {
+    src: "https://st2.depositphotos.com/1064024/10769/i/600/depositphotos_107694484-stock-photo-little-boy.jpg",
+    title: "Some Image",
+  },
+  {
+    src: "https://klike.net/uploads/posts/2020-01/1578662816_1.jpg",
+    title: "Some Image",
+  },
+  {
+    src: "https://avatarko.ru/img/kartinka/2/zhivotnye_kot_prikol_ochki_1637.jpg",
+    title: "Some Image",
+  },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Carusel slides={slides} />;
 }
 
 export default App;
