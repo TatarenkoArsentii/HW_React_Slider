@@ -9,24 +9,20 @@ export class Carusel extends Component {
       index: 0,
       width: 300,
       height: 300,
-      timerId: null,
     };
   }
 
   setFullScreenMode = (isFullScreen) => {
     !isFullScreen
-      ? this.setState({ width: "50%", height: "50%" })
+      ? this.setState({ width: "100%", height: "100%" })
       : this.setState({ width: 300, height: 300 });
   };
 
   start = () => {
-    if (!this.timerId) {
-      this.timerId = setInterval(this.setNext, 2000);
-    }
+    this.timerId = setInterval(this.setNext, 2000);
   };
   stop = () => {
     clearInterval(this.timerId);
-    this.timerId = null;
   };
   startPlay = (isPlay) => {
     !isPlay ? this.start() : this.stop();
@@ -50,7 +46,13 @@ export class Carusel extends Component {
     const { slides } = this.props;
     return (
       <div>
-        <Slide currentImage={slides[index]} width={width} height={height} />
+        <Slide
+          currentImage={slides[index]}
+          nextImage={slides[(index + 1) % slides.length]}
+          prevImage={slides[(index - 1 + slides.length) % slides.length]}
+          width={width}
+          height={height}
+        />
         <Slider
           next={this.setNext}
           prev={this.setPrev}

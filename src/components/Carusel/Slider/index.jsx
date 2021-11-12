@@ -16,7 +16,6 @@ export class Slider extends Component {
       isPlay: false,
       isFullScreen: false,
     };
-    this.timerId = null;
   }
   handlerPlay = () => {
     const { isPlay } = this.state;

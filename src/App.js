@@ -1,29 +1,29 @@
 import React from "react";
+import img1 from "./components/eats_restaurant/img/IMG_0851.png";
+import img2 from "./components/eats_restaurant/img/IMG_0850.png";
 import "./App.css";
-import Carusel from "./components/Carusel";
+import AppWorks from "./components/eats_restaurant";
 
-
-const slides = [
+const App_Works = [
+  "How the app works",
   {
-    src: "http://fotorelax.ru/wp-content/uploads/2016/03/Beautiful-photos-and-pictures-on-various-subjects-01.jpg",
-    title: "Some Image",
+    src: img1,
+    alt: "Login",
+    imgTitle: "Create an account",
+    imgSubTitle: "Create/login to an existing account to get started",
+    imgDescr: "An account is created with your email and a desired password",
   },
   {
-    src: "https://st2.depositphotos.com/1064024/10769/i/600/depositphotos_107694484-stock-photo-little-boy.jpg",
-    title: "Some Image",
-  },
-  {
-    src: "https://klike.net/uploads/posts/2020-01/1578662816_1.jpg",
-    title: "Some Image",
-  },
-  {
-    src: "https://avatarko.ru/img/kartinka/2/zhivotnye_kot_prikol_ochki_1637.jpg",
-    title: "Some Image",
+    src: img2,
+    alt: "Delicious food",
+    imgTitle: "Explore varieties",
+    imgSubTitle: "Shop for your favorites meal as e dey hot.",
+    imgDescr:
+      "Shop for your favorite meals or drinks and enjoy while doing it.",
   },
 ];
-
 function App() {
-  return <Carusel slides={slides} />;
+  return <AppWorks App_Works={App_Works} />;
 }
 
 export default App;
